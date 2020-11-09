@@ -2,7 +2,6 @@ var express = require("express");
 var router = express.Router();
 
 /* GET users listing. */
-const router = require("express").Router();
 
 const {
   signup,
@@ -12,9 +11,14 @@ const {
 const { catchErrors } = require("../handlers/error_handler");
 const auth = require("../middleware/auth");
 
-router.post("/users/login", catchErrors(login));
-router.post("/users/signup", catchErrors(signup));
+router.post("/login", catchErrors(login));
+router.post("/signup", catchErrors(signup));
 
-router.get("/users/me", auth, catchErrors(getMyProfile));
+router.get("/me", auth, catchErrors(getMyProfile));
+router.get("/", auth, function (req, res, next) {
+  res.send({
+    name: "Sarayu",
+  });
+});
 
 module.exports = router;

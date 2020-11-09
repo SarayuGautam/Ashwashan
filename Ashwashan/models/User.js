@@ -61,7 +61,6 @@ userSchema.methods.toJSON = function () {
   userObject.createdAt = moment(userObject.createdAt).format("ddd, d MMM YYYY");
   userObject.updatedAt = moment(userObject.updatedAt).format("ddd, d MMM YYYY");
   delete userObject.password;
-  delete userObject.__v;
   return userObject;
 };
 

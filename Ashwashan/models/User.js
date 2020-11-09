@@ -4,21 +4,23 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const moment = require("moment");
 
+const CustomError = require("../handlers/custom_error");
+
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: "Username except your own name is required",
+      // required: "Username except your own name is required",
       trim: true,
       unique: true,
     },
     password: {
       type: String,
-      required: "Password is required",
+      // required: "Password is required",
     },
     phone: {
       type: String,
-      required: "Phone number is required!",
+      // required: "Phone number is required!",
       trim: true,
       lowercase: true,
       unique: true,
@@ -34,7 +36,7 @@ userSchema.pre("save", async function (next) {
   if (user.isModified("password")) {
     user.password = await bcrypt.hash(
       user.password,
-      parseInt(process.env.SALT_ROUNDS, 10)
+      parseInt(process.env.SALT_ROUNDS)
     );
   }
   next();
@@ -64,6 +66,22 @@ userSchema.methods.toJSON = function () {
   return userObject;
 };
 
+userSchema.statics.findByCredentials = async (phone, password) => {
+  const user = await model("User", userSchema).findOne({
+    phone,
+  });
+  if (!user) throw new CustomError(401, "Invalid credentials!");
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) throw new CustomError(401, "Invalid credentials!");
+  return user;
+};
+userSchema.statics.findByPhone = async (phone) => {
+  const user = await model("User", userSchema).findOne({
+    phone,
+  });
+  return user;
+};
 const User = model("User", userSchema);
 
 module.exports = User;

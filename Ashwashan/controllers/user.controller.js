@@ -8,18 +8,19 @@ const CustomError = require("../handlers/custom_error");
 
 exports.signup = async (req, res) => {
   const { username, password, phone } = req.body;
+  console.log(req.body);
   validateName(username);
   validatePassword(password);
   validatePhone(phone);
   const isExist = await User.findOne({
-    username,
+    phone,
   });
   if (isExist) {
     throw new CustomError(406, "Account already exists with this number!");
   }
 
   const user = new User({
-    name,
+    username,
     password,
     phone,
   });
@@ -30,10 +31,10 @@ exports.signup = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { password, username } = req.body;
-  validateName(username);
+  const { password, phone } = req.body;
+  validatePhone(phone);
   validatePassword(password);
-  const user = await User.findByCredentials(username, password);
+  const user = await User.findByCredentials(phone, password);
   const response = {};
 
   const token = await user.generateAuthToken();

@@ -15,10 +15,5 @@ router.post("/login", catchErrors(login));
 router.post("/signup", catchErrors(signup));
 
 router.get("/me", auth, catchErrors(getMyProfile));
-router.get("/", auth, function (req, res, next) {
-  res.send({
-    name: "Sarayu",
-  });
-});
 
 module.exports = router;

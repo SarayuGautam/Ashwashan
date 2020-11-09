@@ -5,9 +5,9 @@ const CustomError = require("./custom_error");
  * @param {String} name
  * @throws `CustomError`
  */
-exports.validateName = (name) => {
+exports.validateName = (username) => {
   const regName = /^[a-zA-Z][a-zA-Z\s]*$/;
-  if (!name || !regName.test(name)) {
+  if (!username || !regName.test(username)) {
     throw new CustomError(406, "Invalid name provided!");
   }
 };
@@ -18,8 +18,8 @@ exports.validateName = (name) => {
  * @throws `CustomError`
  */
 exports.validatePassword = (password) => {
-  const regName = /^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,}$/;
-  if (!password || !regName.test(password)) {
+  // const regName = /^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,}$/;
+  if (!password || password.length < 8) {
     throw new CustomError(
       406,
       `Invalid Password.

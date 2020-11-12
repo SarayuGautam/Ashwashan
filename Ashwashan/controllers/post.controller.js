@@ -1,5 +1,5 @@
 const Post = require("../models/Post");
-
+const shuffle = require("../helpers/array.suffle");
 exports.addPost = async (req, res) => {
   const { postTitle, postBody } = req.body;
   const userId = req.user._id;
@@ -16,10 +16,16 @@ exports.addPost = async (req, res) => {
 };
 
 exports.getPost = async (req, res) => {
-  const postId = req.params._id;
+  const postId = req.params.id;
   const post = await Post.findOne({
     _id: postId,
   });
-  console.log(post);
   return res.json(post);
+};
+
+exports.getallPosts = async (req, res) => {
+  const posts = await Post.find({});
+  return res.json({
+    posts: shuffle(posts),
+  });
 };

@@ -2,14 +2,14 @@ var express = require("express");
 var router = express.Router();
 
 const {
-  addArticles,
+  addArticle,
   getArticles,
   getAArticle,
 } = require("../controllers/articles.controller");
 
 const { catchErrors } = require("../handlers/error_handler");
 
-router.post("/addAllArticles", catchErrors(addArticles));
+router.post("/addArticle", catchErrors(addArticle));
 router.get("/allArticles", catchErrors(getArticles));
 router.get("/getAArticle", catchErrors(getAArticle));
 

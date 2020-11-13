@@ -24,6 +24,6 @@ exports.getAllComments = async (req, res) => {
     postId,
   });
   return res.json({
-    comments,
+    comments: shuffle(comments),
   });
 };

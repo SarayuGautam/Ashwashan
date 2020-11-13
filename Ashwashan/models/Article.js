@@ -19,6 +19,9 @@ const articleSchema = new Schema(
       type: String,
       required: "url is required",
     },
+    type: {
+      type: String,
+    },
   },
   {
     timestamps: true,

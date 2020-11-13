@@ -1,8 +1,7 @@
 // const Qurl = "https://www.goodreads.com/quotes/tag/bad-times";
 // const Iurl = "https://www.keepinspiring.me/quotes-about-feelings/";
-const axios = require("axios").default;
-const cheerio = require("cheerio");
-
+// const axios = require("axios").default;
+// const cheerio = require("cheerio");
 // const getQuotes = async () => {
 //   const response = await axios.get(Qurl);
 //   const $ = cheerio.load(response.data);

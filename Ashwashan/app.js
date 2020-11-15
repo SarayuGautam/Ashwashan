@@ -11,6 +11,8 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postRouter = require("./routes/posts");
 var commentRouter = require("./routes/comment");
+var quotesRouter = require("./routes/quotes");
+var articlesRouter = require("./routes/articles");
 
 var app = express();
 
@@ -27,7 +29,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/posts", postRouter);
-app.use("/id/comments/", commentRouter);
+app.use("/quotes", quotesRouter);
+app.use("/articles", articlesRouter);
+app.use("/:id/comments", commentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

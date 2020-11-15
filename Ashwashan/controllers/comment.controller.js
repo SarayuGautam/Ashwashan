@@ -1,29 +1,28 @@
 const Comment = require("../models/Comment");
 const shuffle = require("../helpers/array.suffle");
 
-exports.addComment = async function (req, res) {
+exports.addComment = async (req, res) => {
   const { commentBody } = req.body;
-  const { postId } = req.params.id;
-  const { userId } = req.user;
+  const userId = req.user._id;
+  const postId = req.params.id;
 
   const comment = new Comment({
     commentBody,
-    postId,
     userId,
+    postId,
   });
   await comment.save();
-
-  res.json({
+  return res.json({
     comment,
   });
 };
 
 exports.getAllComments = async (req, res) => {
-  const { postId } = req.params.id;
+  const postId = req.params.id;
   const comments = await Comment.where({
     postId,
   });
   return res.json({
-    comments,
+    comments: shuffle(comments),
   });
 };

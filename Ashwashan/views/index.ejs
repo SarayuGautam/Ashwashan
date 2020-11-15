@@ -35,19 +35,11 @@
             <!-- Collection of nav links, forms, and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
                 <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link" style="color: black;">Home</a>
+                    <a href="index.ejs" class="nav-item nav-link" style="color: black;">Home</a>
                     <a href="#" class="nav-item nav-link" style="color: black; ">Information</a>
-                    <a href=" #" class="nav-item nav-link" style="color: black;">Peer Support</a>
-                    <div class=" nav-item dropdown">
-                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle"
-                            style="color: black;">Organizations</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">O1</a>
-                            <a href="#" class="dropdown-item">O2</a>
-                            <a href="#" class="dropdown-item">O3</a>
-                            <a href="#" class="dropdown-item">O4</a>
-                        </div>
-                    </div>
+                    <a href="collective_exp.ejs" class="nav-item nav-link" style="color: black;">Peer Support</a>
+                    <a href="collective_org.ejs" class="nav-item nav-link" style="color: black;">Organizations</a>
+
                 </div>
 
                 <div class="navbar-nav action-buttons ml-auto">
@@ -56,7 +48,7 @@
             </div>
         </nav>
     </div>
-    <!-- Modal HTML -->
+    <!--Login Modal HTML -->
     <div id="myModal" class="modal fade">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
@@ -90,6 +82,61 @@
             </div>
         </div>
     </div>
+    <!--Login Modal ends-->
+    <!--Signup modal-->
+    <div id="myModalsignup" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title">Create an account
+                        <br>
+                        <p>Already have an account?<a href="#myModal" data-toggle="modal" data-dismiss="modal">Login
+                                Here</a></p>
+                    </h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post" class="form-horizontal">
+
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Username</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control" name="username" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Email Address</label>
+                            <div class="col-8">
+                                <input type="email" class="form-control" name="email" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Password</label>
+                            <div class="col-8">
+                                <input type="password" class="form-control" name="password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Confirm Password</label>
+                            <div class="col-8">
+                                <input type="password" class="form-control" name="confirm_password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-8 offset-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Signup modal ends-->
     <div class="title">
         <h1>Ashwashan</h1>
         <p>Subtitle Here</p>

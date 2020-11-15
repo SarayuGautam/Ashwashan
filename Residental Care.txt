@@ -1,0 +1,10 @@
+{
+  "name":"Tranquility Hospital and Research Centre",
+  "specialization":"Specialist Neuro-psychiatric Hospital",
+  "isOrganization":true,
+  "category":"Residental Centre",
+  "OpeningHours":"24 hours Emergency",
+  "location":"Khumaltar Oralo, Lalitpur", 
+  "email":"info.tranquilityhospital@gmail.com",
+  "phoneNumber":9841504122, 015544940
+}

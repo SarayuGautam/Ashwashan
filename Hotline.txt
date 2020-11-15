@@ -1,0 +1,12 @@
+{
+  "name":"TPO Nepal",
+  "specialization":"Physchosocial Mental Health Service",
+  "isOrganization":true,
+  "category":"Psychotherapy",
+  "OpeningHours":"9am - 5pm Monday - Friday",
+  "location":"Baluwatar, Kathmandu", 
+  "email":"tponepal@tponepal.org",
+  "phoneNumber":014431717,
+  "toll free":16600102005 10-4
+   
+}

@@ -13,10 +13,7 @@ var postRouter = require("./routes/posts");
 var commentRouter = require("./routes/comment");
 var quotesRouter = require("./routes/quotes");
 var articlesRouter = require("./routes/articles");
-
-var organizations = require("./Organizations");
-
-const Organization = require("./models/Organizations");
+var organizationsRouter = require("./routes/organization");
 
 var app = express();
 
@@ -36,22 +33,9 @@ app.use("/posts", postRouter);
 app.use("/quotes", quotesRouter);
 app.use("/articles", articlesRouter);
 app.use("/:id/comments", commentRouter);
+app.use("/:id/comments", commentRouter);
+app.use("/organizations", organizationsRouter);
 
-organizations.forEach((o) => {
-  const organization = new Organization({
-    ...o,
-  });
-
-  organization
-    .save()
-
-    .then((_) => {
-      console.log(_);
-    })
-    .catch((_) => {
-      console.log(_);
-    });
-});
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

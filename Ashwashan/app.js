@@ -14,6 +14,8 @@ var commentRouter = require("./routes/comment");
 var quotesRouter = require("./routes/quotes");
 var articlesRouter = require("./routes/articles");
 
+var organizations = require("./Organizations.json");
+
 var app = express();
 
 // view engine setup

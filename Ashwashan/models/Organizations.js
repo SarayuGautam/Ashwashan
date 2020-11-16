@@ -5,7 +5,6 @@ const organizationSchema = new Schema(
   {
     name: {
       type: String,
-      required: "name is required",
     },
     specialization: {
       type: String,

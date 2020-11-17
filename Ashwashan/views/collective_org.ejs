@@ -1,79 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organizations</title>
-    <link rel="stylesheet" href="../public/stylesheets/collective_org.css">
-    <link rel="stylesheet" href="../public/stylesheets/navbar.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-</head>
-
-<body>
-    <!--Navbar begin-->
-    <div>
-        <nav class=" navbar navbar-expand-lg navbar-light ">
-            <a href=" #" class="navbar-brand">Ashwashan</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Collection of nav links, forms, and other content for toggling -->
-            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-                <div class="navbar-nav">
-                    <a href="index.ejs" class="nav-item nav-link" style="color: black;">Home</a>
-                    <a href="#" class="nav-item nav-link" style="color: black; ">Information</a>
-                    <a href=" #" class="nav-item nav-link" style="color: black;">Peer Support</a>
-                    <a href="collective_org.ejs" class="nav-item nav-link" style="color: black;">Organizations</a>
-
-
-                </div>
-
-                <div class="navbar-nav action-buttons ml-auto">
-                    <a href="#myModal" data-toggle="modal" style="color: black;">Login/Signup</a>
-                </div>
+<%- include('partials/header') %>
+<!--Categories card begin-->
+<div class="container py-4">
+    <h4>ORGANIZATIONS</h4>
+    <div class="card-deck-wrapper">
+        <div class="card-deck">
+            <div class="card p-2">
+                <a class="card-block stretched-link text-decoration-none" href="org_clinical.html">
+                    <div style="height: 15rem;">
+                        <img src="../public/images/care.png" class="card-img-top" alt="Clinical Care">
+                    </div>
+                    <hr>
+                    <p class="card-text" style="text-align: center;">Clinical Care</p>
+                </a>
             </div>
-        </nav>
-    </div>
-    <!--Navbar end-->
-    <!--Categories card begin-->
-    <div class="container py-4">
-        <h4>ORGANIZATIONS</h4>
-        <div class="card-deck-wrapper">
-            <div class="card-deck">
-                <div class="card p-2">
-                    <a class="card-block stretched-link text-decoration-none" href="org_clinical.html">
-                        <div style="height: 15rem;">
-                            <img src="../public/images/care.png" class="card-img-top" alt="Clinical Care">
-                        </div>
-                        <hr>
-                        <p class="card-text" style="text-align: center;">Clinical Care</p>
-                    </a>
-                </div>
-                <div class="card p-2">
-                    <a class="card-block stretched-link text-decoration-none" href="#">
-                        <div style="height: 15rem;">
-                            <img src="../public/images/psy.png" class="card-img-top" alt="Psychotherapy">
-                        </div>
-                        <hr>
-                        <p class="card-text" style="text-align: center;">Psychotherapy</p>
-                    </a>
-                </div>
-                <div class="card p-2">
-                    <a class="card-block stretched-link text-decoration-none" href="#">
-                        <div style="height: 15rem;">
-                            <img src="../public/images/psy.png" class="card-img-top" alt="Psychotherapy">
-                        </div>
-                        <hr>
-                        <p class="card-text" style="text-align: center;">Psychotherapy</p>
-                    </a>
-                </div>
+            <div class="card p-2">
+                <a class="card-block stretched-link text-decoration-none" href="#">
+                    <div style="height: 15rem;">
+                        <img src="../public/images/psy.png" class="card-img-top" alt="Psychotherapy">
+                    </div>
+                    <hr>
+                    <p class="card-text" style="text-align: center;">Psychotherapy</p>
+                </a>
+            </div>
+            <div class="card p-2">
+                <a class="card-block stretched-link text-decoration-none" href="#">
+                    <div style="height: 15rem;">
+                        <img src="../public/images/psy.png" class="card-img-top" alt="Psychotherapy">
+                    </div>
+                    <hr>
+                    <p class="card-text" style="text-align: center;">Psychotherapy</p>
+                </a>
             </div>
         </div>
     </div>
-    <!--Categories card end-->
-</body>
-
-</html>
+</div>
+<!--Categories card end-->
+<%- include('partials/footer') %>

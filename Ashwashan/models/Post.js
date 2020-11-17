@@ -1,4 +1,3 @@
-const assert = require("assert");
 const { Schema, model } = require("mongoose");
 const moment = require("moment");
 
@@ -10,6 +9,10 @@ const postSchema = new Schema(
     postBody: {
       type: String,
       required: "post is required",
+    },
+    category: {
+      type: String,
+      required: "category is required",
     },
     userId: {
       type: Schema.Types.ObjectId,

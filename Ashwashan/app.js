@@ -14,7 +14,7 @@ var commentRouter = require("./routes/comment");
 var quotesRouter = require("./routes/quotes");
 var articlesRouter = require("./routes/articles");
 var organizationsRouter = require("./routes/organization");
-
+var informationRouter = require("./routes/informations");
 var app = express();
 
 // view engine setup
@@ -35,6 +35,7 @@ app.use("/articles", articlesRouter);
 app.use("/:id/comments", commentRouter);
 app.use("/:id/comments", commentRouter);
 app.use("/organizations", organizationsRouter);
+app.use("/informations", informationRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

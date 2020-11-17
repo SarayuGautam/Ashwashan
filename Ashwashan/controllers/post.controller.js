@@ -30,7 +30,7 @@ exports.getallPosts = async (req, res) => {
   const posts = await Post.where({
     category,
   });
-  return res.json({
+  return res.render("collective_exp", {
     posts: shuffle(posts),
   });
 };

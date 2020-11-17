@@ -1,6 +1,27 @@
-<%- include('partials/upperHeader') %>
-<link rel="stylesheet" href="stylesheets/index.css">
-<%- include('partials/lowerHeader') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheets" href="stylesheets/collectiveExp_anxiety.css">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('partials/header') %>
     <div class="text-center">
         Share with the community
         <a class="btn btn-outline-primary" href="/posts/anxiety/add" role="button">Share Here</a></div>
@@ -10,7 +31,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <div class="card  mb-3">
-                    <div class="card-body" style="width: 18rem; height: 16rem;">
+                    <div class="card-body" style=" height: 16rem;">
                         <h4 class="card-title">Experience title From db</h4>
                         <hr>
                         <div class="text-muted">-Experience author from db</div>
@@ -30,4 +51,7 @@
 
     </div>
     <!--Experience cards end-->
-<%- include('partials/footer') %>
+
+</body>
+
+</html>

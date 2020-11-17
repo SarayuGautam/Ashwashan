@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category support</title>
+    <link rel="stylesheet" href="../public/stylesheets/category_support.css">
+    <link rel="stylesheet" href="../public/stylesheets/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!--Navbar begin-->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a href="#" class="navbar-brand">Ashwashan</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+                <div class="navbar-nav">
+                    <a href="index.ejs" class="nav-item nav-link" style="color: black;">Home</a>
+                    <a href="#" class="nav-item nav-link" style="color: black; ">Information</a>
+                    <a href="#" class="nav-item nav-link" style="color: black;">Peer Support</a>
+                    <a href="organizations" class="nav-item nav-link" style="color: black;">Organizations</a>
+
+                </div>
+
+                <div class="navbar-nav action-buttons ml-auto">
+                    <a href="#myModal" data-toggle="modal" style="color: black;">Login/Signup</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Navbar end-->
+    <!--Categories card begin-->
+    <div class="container py-4">
+        <h4>ORGANIZATIONS</h4>
+        <div class="card-deck-wrapper">
+            <div class="card-deck">
+                <div class="card p-2">
+                    <a class="card-block stretched-link text-decoration-none" href="org_clinical.html">
+                        <div style="height: 15rem;">
+                            <img src="#" class="card-img-top" alt="Anxiety support">
+                        </div>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">Anxiety Support</p>
+                    </a>
+                </div>
+                <div class="card p-2">
+                    <a class="card-block stretched-link text-decoration-none" href="#">
+                        <div style="height: 15rem;">
+                            <img src="#" class="card-img-top" alt="Depression Support">
+                        </div>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">Depresssion Support</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Categories card end-->
+</body>
+
+</html>

@@ -10,6 +10,10 @@ const postSchema = new Schema(
       type: String,
       required: "post is required",
     },
+    category: {
+      type: String,
+      required: "category is required",
+    },
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",

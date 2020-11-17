@@ -56,16 +56,16 @@
 
                     <h4 class="modal-title">Member Login
                         <br>
-                        <p>Don't have an account?<a href="signup.html">Become a member</a></p>
+                        <p> Don't have an account? <a href="#myModalsignup" data-toggle="modal" > Become a member </a></p>
                     </h4>
 
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="/examples/actions/confirmation.php" method="post">
+                    <form action="/users/login/" method="post">
                         <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" name="username" placeholder="Username"
+                            <label>Phone Number</label>
+                            <input type="phone" class="form-control" name="phone" placeholder="Phone Number"
                                 required="required">
                         </div>
                         <div class="form-group">
@@ -91,14 +91,14 @@
 
                     <h4 class="modal-title">Create an account
                         <br>
-                        <p>Already have an account?<a href="#myModal" data-toggle="modal" data-dismiss="modal">Login
+                        <p> Already have an account? <a href="#myModal" data-dismiss="modal"> Login
                                 Here</a></p>
                     </h4>
 
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="/examples/actions/confirmation.php" method="post" class="form-horizontal">
+                    <form action="/users/signup/" method="post" class="form-horizontal">
 
 
                         <div class="form-group row">
@@ -108,9 +108,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-4">Email Address</label>
+                            <label class="col-form-label col-4">Phone Number</label>
                             <div class="col-8">
-                                <input type="email" class="form-control" name="email" required="required">
+                            <input type="phone" class="form-control" name="phone"
+                                required="required">
                             </div>
                         </div>
                         <div class="form-group row">

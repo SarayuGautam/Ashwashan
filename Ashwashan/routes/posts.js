@@ -11,8 +11,8 @@ const { catchErrors } = require("../handlers/error_handler");
 
 const auth = require("../middleware/auth");
 
-router.post("/add", auth, catchErrors(addPost));
-router.get("/all", catchErrors(getallPosts));
+router.post("/:category/add", auth, catchErrors(addPost));
+router.get("/:category/all", catchErrors(getallPosts));
 router.get("/:id", catchErrors(getPost));
 
 module.exports = router;

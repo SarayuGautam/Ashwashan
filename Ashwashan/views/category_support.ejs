@@ -1,13 +1,27 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!--Navbar end-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/category_support.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+
     <!--Categories card begin-->
     <div class="container py-4">
-        <h4>ORGANIZATIONS</h4>
+
         <div class="card-deck-wrapper">
             <div class="card-deck">
                 <div class="card p-2">
-                    <a class="card-block stretched-link text-decoration-none" href="org_clinical.html">
+                    <a class="card-block stretched-link text-decoration-none" href="posts/anxiety">
                         <div style="height: 15rem;">
                             <img src="#" class="card-img-top" alt="Anxiety support">
                         </div>
@@ -16,7 +30,7 @@
                     </a>
                 </div>
                 <div class="card p-2">
-                    <a class="card-block stretched-link text-decoration-none" href="#">
+                    <a class="card-block stretched-link text-decoration-none" href="posts/depression">
                         <div style="height: 15rem;">
                             <img src="#" class="card-img-top" alt="Depression Support">
                         </div>
@@ -28,4 +42,8 @@
         </div>
     </div>
     <!--Categories card end-->
-<%- include('partials/footer') %>
+    <%- include('partials/footer') %>
+
+</body>
+
+</html>

@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  addPost,
+  savePost,
   getPost,
   getallPosts,
 } = require("../controllers/post.controller");
@@ -14,7 +14,12 @@ const auth = require("../middleware/auth");
 router.get("/", function (req, res, next) {
   res.render("category_support");
 });
-router.post("/:category/add", auth, catchErrors(addPost));
+
+router.get("/:category/add", function (req, res, next) {
+  res.render("share_exp");
+});
+
+router.post("/:category/save", auth, catchErrors(savePost));
 router.get("/:category/all", catchErrors(getallPosts));
 router.get("/:id", catchErrors(getPost));
 

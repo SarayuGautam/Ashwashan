@@ -6,14 +6,18 @@
     height: 18rem;
     width:18rem
 }
+/* not required
 .text-flow{
-    display: block;/* or inline-block */
+    display: block;
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
     max-height: 3.6em;
     line-height: 1.8em;
 }
+
+
 .card-body{
     overflow-y: auto;
 }
+*/

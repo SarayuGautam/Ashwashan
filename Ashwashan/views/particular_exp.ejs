@@ -1,46 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <%- include('partials/header') %>
-    <!--Experience cards begin-->
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Experience title from db</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Experience author</h6>
-                <p class="card-text">Experience body from db</p>
-            </div>
-        </div>
-
-    </div>
-    <div class="container">
-        <div class="card" style="border: white;">
-            <div class="card-body">
-                <p class="card-text"><textarea id="experienceText" class="form-control" cols="10" rows="2"
-                        name="experienceText" style="width: 100%;" form="experienceForm"></textarea></p>
-                </p>
-                <a href="#" class="card-link">Comment</a>
-
-            </div>
+<%- include('partials/upperHeader') %>
+<%- include('partials/lowerHeader') %>
+<!--Experience cards begin-->
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Experience title from db</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Experience author</h6>
+            <p class="card-text">Experience body from db</p>
         </div>
     </div>
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">comment author from db</h6>
-                <p>comment body from db</p>
-            </div>
-        </div>
 
+</div>
+<div class="container">
+    <div class="card" style="border: white;">
+        <div class="card-body">
+            <p class="card-text"><textarea id="experienceText" class="form-control" cols="10" rows="2"
+                    name="experienceText" style="width: 100%;" form="experienceForm"></textarea></p>
+            </p>
+            <a href="#" class="card-link">Comment</a>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">comment author from db</h6>
+            <p>comment body from db</p>
+        </div>
     </div>
 
-</body>
+</div>
 
-</html>
+<%- include('partials/footer') %>

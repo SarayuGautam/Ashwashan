@@ -10,19 +10,19 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-3">
+           <% posts.forEach((post,i)=>{%>
             <div class="card  mb-3">
                 <div class="card-body" style=" height: 16rem;">
-                    <h4 class="card-title">Experience title From db</h4>
+                    <h4 class="card-title"><%= post.postTitle %></h4>
                     <hr>
-                    <div class="text-muted">-Experience author from db</div>
-
                     <div class="text-flow">
-                        <p class="card-text">Experience body from db</p>
+                        <p class="card-text"><%= post.postBody.substr(1, 200) %></p>
                     </div>
                     <div class="text-right">
                         <a class="btn btn-outline-primary" href="#" role="button">Read More</a></div>
                 </div>
             </div>
+             <% }) %>
             <!-- /.card -->
         </div>
         <!-- /.col-sm-4 -->
@@ -32,6 +32,4 @@
 </div>
 <!--Experience cards end-->
 
-</body>
-
-</html>
+<%- include('partials/footer') %>

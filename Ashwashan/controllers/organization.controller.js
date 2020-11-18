@@ -7,6 +7,6 @@ exports.getOrganizations = async (req, res) => {
     category,
   });
   return res.render("org_list", {
-    articles: shuffle(organizations),
+    organizations: shuffle(organizations),
   });
 };

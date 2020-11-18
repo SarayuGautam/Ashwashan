@@ -1,5 +1,6 @@
 const Post = require("../models/Post");
 const shuffle = require("../helpers/array.suffle");
+const User = require("../models/User");
 
 exports.savePost = async (req, res) => {
   const { postTitle, postBody } = req.body;
@@ -31,6 +32,7 @@ exports.getallPosts = async (req, res) => {
   const posts = await Post.where({
     category,
   });
+
   return res.render("collective_exp", {
     posts: shuffle(posts),
   });

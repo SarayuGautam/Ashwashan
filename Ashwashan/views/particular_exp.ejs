@@ -9,13 +9,14 @@
 
 <body>
     <%- include('partials/header') %>
+
     <!--Experience cards begin-->
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Experience title from db</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Experience author</h6>
-                <p class="card-text">Experience body from db</p>
+                <h5 class="card-title"><%= post.postTitle %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= post.username %></h6>
+                <p class="card-text"><%= post.postBody %></p>
             </div>
         </div>
 
@@ -32,12 +33,13 @@
         </div>
     </div>
     <div class="container">
+        <% comments.forEach((comment,i)=>{%>
         <div class="card">
             <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">comment author from db</h6>
-                <p>comment body from db</p>
+                <p>comment.commentBody</p>
             </div>
         </div>
+       <% }) %>
 
     </div>
 

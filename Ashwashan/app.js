@@ -12,7 +12,6 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postRouter = require("./routes/posts");
-var commentRouter = require("./routes/comment");
 var quotesRouter = require("./routes/quotes");
 var articlesRouter = require("./routes/articles");
 var organizationsRouter = require("./routes/organization");
@@ -37,8 +36,6 @@ app.use("/users", usersRouter);
 app.use("/posts", postRouter);
 app.use("/quotes", quotesRouter);
 app.use("/articles", articlesRouter);
-app.use("/:id/comments", commentRouter);
-app.use("/:id/comments", commentRouter);
 app.use("/organizations", organizationsRouter);
 app.use("/informations", informationRouter);
 

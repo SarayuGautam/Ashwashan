@@ -19,21 +19,7 @@
 .navbar .action-buttons .dropdown-toggle::after {
     display: none;
 }
-.navbar .dropdown-item i {
-    font-size: 16px;
-    min-width: 22px;
-}
 
-.navbar .dropdown-menu {
-    border-radius: 1px;
-    border-color: #e5e5e5;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-}
-
-.navbar .navbar-nav .dropdown-menu a {
-    padding: 8px 20px;
-    line-height: normal;
-}
 /* login and singup modal*/
 .modal-login {		
 	color: #636363;

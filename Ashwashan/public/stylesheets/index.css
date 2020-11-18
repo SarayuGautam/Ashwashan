@@ -10,27 +10,7 @@ body {
     border-radius: 4px;
 }
 
-.navbar {
-    background-image: linear-gradient(to right, #95a7b6, #aabcc5, #c1d0d5, #dbe5e6, #f5f9f9);
-    padding-left: 16px;
-    padding-right: 16px;
-}
 
-
-.navbar .navbar-brand {
-    padding-left: 0;
-    font-size: 20px;
-    padding-right: 50px;
-}
-
-.navbar .navbar-nav {
-    position: relative;
-    
-}
-
-.navbar .action-buttons .dropdown-toggle::after {
-    display: none;
-}
 
 
 

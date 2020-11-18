@@ -26,7 +26,7 @@ exports.signup = async (req, res) => {
       phone,
     });
     await user.save();
-    return res.json({
+    return res.render("/", {
       user,
     });
   } catch (error) {
@@ -47,7 +47,9 @@ exports.login = async (req, res) => {
   response.token = token;
   response.message = "Login successful!";
 
-  return res.json(response);
+  return res.render("/", {
+    response,
+  });
 };
 
 exports.getMyProfile = async (req, res) => {

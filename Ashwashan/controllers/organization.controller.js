@@ -6,7 +6,7 @@ exports.getOrganizations = async (req, res) => {
   const organizations = await Organization.find({
     category,
   });
-  return res.json({
-    articles: shuffle(organizations),
+  return res.render("org_list", {
+    organizations: shuffle(organizations),
   });
 };

@@ -1,102 +1,12 @@
-
 <%- include('partials/upperHeader') %>
 <link rel="stylesheet" href="stylesheets/index.css">
-<%- include('partials/lowerHeader') %>
-    <!--Login Modal HTML -->
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <div class="modal-header">
 
-                    <h4 class="modal-title">Member Login
-                        <br>
-                        <p> Don't have an account? <a href="#myModalsignup" data-toggle="modal" > Become a member </a></p>
-                    </h4>
+<%- include('partials/lowerHeader')%>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="/users/login/" method="post">
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="phone" class="form-control" name="phone" placeholder="Phone Number"
-                                required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Password"
-                                required="required">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!--Login Modal ends-->
-    <!--Signup modal-->
-    <div id="myModalsignup" class="modal fade">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <div class="modal-header">
-
-                    <h4 class="modal-title">Create an account
-                        <br>
-                        <p> Already have an account? <a href="#myModal" data-dismiss="modal"> Login
-                                Here</a></p>
-                    </h4>
-
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="/users/signup/" method="post" class="form-horizontal">
-
-
-                        <div class="form-group row">
-                            <label class="col-form-label col-4">Username</label>
-                            <div class="col-8">
-                                <input type="text" class="form-control" name="username" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-4">Phone Number</label>
-                            <div class="col-8">
-                            <input type="phone" class="form-control" name="phone"
-                                required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-4">Password</label>
-                            <div class="col-8">
-                                <input type="password" class="form-control" name="password" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-4">Confirm Password</label>
-                            <div class="col-8">
-                                <input type="password" class="form-control" name="confirm_password" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-8 offset-4">
-                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!--Signup modal ends-->
-    <div class="title">
-        <h1>Ashwashan</h1>
-        <p>Subtitle Here</p>
-    </div>
-
+<div class="title">
+    <h1>Ashwashan</h1>
+    <p>Subtitle Here</p>
+</div>
 
 
 <%- include('partials/footer') %>

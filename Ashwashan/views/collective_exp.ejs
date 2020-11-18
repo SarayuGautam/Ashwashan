@@ -1,33 +1,27 @@
 <%- include('partials/upperHeader') %>
-<link rel="stylesheet" href="stylesheets/index.css">
+<link rel="stylesheets" href="stylesheets/collectiveExp_anxiety.css">
 <%- include('partials/lowerHeader') %>
-    <div class="text-center">
-        Share with the community
-        <a class="btn btn-outline-primary" href="/posts/anxiety/add" role="button">Share Here</a></div>
-    </div>
-    <!--Experience cards begin-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="card  mb-3">
-                    <div class="card-body" style="width: 18rem; height: 16rem;">
-                        <h4 class="card-title">Experience title From db</h4>
-                        <hr>
-                        <div class="text-muted">-Experience author from db</div>
 
-                        <div class="text-flow">
-                            <p class="card-text">Experience body from db</p>
-                        </div>
-                        <div class="text-right">
-                            <a class="btn btn-outline-primary" href="#" role="button">Read More</a></div>
-                    </div>
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col-sm-4 -->
+<div class="text-center" style="margin-top: 2%;">
+    Share with the community
+    <a class="btn btn-outline-primary" href="/posts/anxiety/add" role="button">Share Here</a></div>
+</div>
+<!--Experience cards begin-->
+<div class="container py-4">
+
+    <% posts.forEach((post,i)=>{%>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= post.postTitle %></h5>
+            <p class="card-text"><%= post.postBody.substr(1, 200) %></p>
+            <a href="/posts/<%= post._id %>" class="btn btn-outline-primary" role="button">Read more</a>
         </div>
-        <!-- /.row -->
-
+        <br>
     </div>
-    <!--Experience cards end-->
+    <% }) %>
+    <!-- /.card -->
+</div>
+<!--Experience cards end-->
+
+
 <%- include('partials/footer') %>

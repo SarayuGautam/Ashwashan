@@ -16,13 +16,3 @@ exports.addComment = async (req, res) => {
     comment,
   });
 };
-
-exports.getAllComments = async (req, res) => {
-  const postId = req.params.id;
-  const comments = await Comment.where({
-    postId,
-  });
-  return res.json({
-    comments: shuffle(comments),
-  });
-};

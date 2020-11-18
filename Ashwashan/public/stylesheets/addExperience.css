@@ -1,15 +1,22 @@
 
-.formContainer{
+.card{
     display: block;
     text-align: center;
     border-radius: 5px;
-    padding-top: 120px;
+    width: fit-content;
+    margin-left: 25%;
+    
+    
 }
-form{
+.expForm{
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-   
+  
     align-content: center;
+}
+.formHead{
+    margin-top: 20px;
+    text-align: center;
 }

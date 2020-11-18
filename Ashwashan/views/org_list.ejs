@@ -1,5 +1,5 @@
 <%- include('partials/upperHeader') %>
-<link rel="stylesheet" href="stylesheets/index.css">
+<link rel="stylesheet" href="stylesheets/org_clinical.css">
 <%- include('partials/lowerHeader') %>
 
     <!--Navbar end-->
@@ -51,7 +51,7 @@
                                         <td>Opening Hours:</td>
                                         <td><%= organization.openingHours %></td>
 
-                                    </tr>
+                                </tr>
 
                                     <tr>
                                         <th scope="row"><svg width="1em" height="1em" viewBox="0 0 16 16"
@@ -63,7 +63,7 @@
                                         <td>Email:</td>
                                         <td><%= organization.email %></td>
 
-                                    </tr>
+                                </tr>
 
                                     <tr>
                                         <th scope="row"><svg width="1em" height="1em" viewBox="0 0 16 16"
@@ -75,16 +75,17 @@
                                         <td>Phone Number:</td>
                                         <td><%= organization.phoneNumber %></td>
 
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </table>
-                        </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </table>
                     </div>
                 </div>
-                <% }) %>
-            <!-- </div> -->
+            </div>
         </div>
+        <% }) %>
+        <!-- </div> -->
     </div>
-    <!--Information cards end-->
+</div>
+<!--Information cards end-->
 <%- include('partials/footer') %>

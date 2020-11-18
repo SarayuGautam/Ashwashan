@@ -2,6 +2,7 @@
     background-color: #79bcdd;
     position: absolute;
     width: 100%;
+    bottom: 0;
 }
 .footer .footer-content {
     border: 1px solid red;
@@ -19,13 +20,13 @@
 }
 .footer .footer-content .footer-section .review {
     color: black;
-    
+
 }
 .footer .footer-content .footer-section .hotlines span {
     color: black;
     display: block;
     padding: 10px;
-    
+
 }
 .footer .footer-content .footer-section .contact span {
     display: block;

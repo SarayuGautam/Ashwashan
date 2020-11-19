@@ -3,7 +3,7 @@
 
 <div class="container py-4">
     <div class="row">
-        <% articles.forEach((article,i)=>{%>
+
         <div class="col-sm-6 col-md-4">
             <div class="card  mb-3" style="height: 22rem">
                 <!-- image and link to article not added    -->
@@ -11,13 +11,14 @@
                     src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-topfff&text=.card-img-top"
                     alt="Card image cap" width="400">
                 <div class="card-body">
-                    <p class="card-text"><%= article.title %></p>
+                    <p class="card-text">Article title</p>
 
                     <a href="#" class="btn btn-outline-primary" role="button">Read full article</a>
                 </div>
             </div>
         </div>
-        <% }) %>
+
+
     </div>
 </div>
 <%- include('partials/footer') %>

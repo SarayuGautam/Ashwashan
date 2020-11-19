@@ -13,6 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -86,6 +87,7 @@
     </div>
 
     <!--Login Modal ends-->
+
     <!--Signup modal-->
     <div id="myModalsignup" class="modal fade">
         <div class="modal-dialog modal-login">
@@ -101,36 +103,54 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="/users/signup/" method="post" class="form-horizontal">
+                    <form action="/users/signup/" method="post" class="form-horizontal" id="signupForm">
 
 
                         <div class="form-group row">
                             <label class="col-form-label col-4">Username</label>
                             <div class="col-8">
-                                <input type="text" class="form-control" name="username" required="required">
+                                <div class="cont">
+                                    <input type="text" class="form-control" name="username" id="username"
+                                        required="required">
+                                    <small></small>
+                                </div>
                             </div>
+
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-4">Phone Number</label>
                             <div class="col-8">
-                                <input type="phone" class="form-control" name="phone" required="required">
+                                <div class="cont">
+                                    <input type="phone" class="form-control" name="phone" id="phone"
+                                        required="required">
+                                    <small></small>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-4">Password</label>
                             <div class="col-8">
-                                <input type="password" class="form-control" name="password" required="required">
+                                <div class="cont">
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        required="required">
+                                    <small></small>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-4">Confirm Password</label>
                             <div class="col-8">
-                                <input type="password" class="form-control" name="confirm_password" required="required">
+                                <div class="cont">
+                                    <input type="password" class="form-control" name="confirm_password"
+                                        id="confirm_password" required="required">
+                                    <small></small>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-8 offset-4">
                                 <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                                <small></small>
                             </div>
                         </div>
                     </form>
@@ -140,3 +160,69 @@
         </div>
     </div>
     <!--Signup modal ends-->
+    <!--validation-->
+    <script>
+
+        const form = document.getElementById('signupForm');
+        const username = document.getElementById('username');
+        const phone = document.getElementById('phone');
+        const password = document.getElementById('password');
+        const confirm_password = document.getElementById('confirm_password');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            validateForm();
+        });
+
+        function validateForm() {
+
+            const usernameValue = username.value;
+            const phoneValue = phone.value;
+            const passwordValue = password.value
+            const confirm_passwordValue = confirm_password.value;
+            var regex = new RegExp("^[a-zA-Z ]+$");
+            var pwdregex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+
+            if (!regex.test(usernameValue)) {
+                setErrorFor(username, 'Contains invalid characters(alphabets only)')
+            } else {
+                setSuccessFor(username)
+            }
+
+            if (phoneValue.length !== 10) {
+                setErrorFor(phone, 'Invalid phone number');
+            }
+            else {
+                setSuccessFor(phone);
+            }
+
+            if (!pwdregex.test(passwordValue)) {
+                setErrorFor(password, 'Should contain upperCase, lowerCase alphabet, number,symbol,minimum 8 in length');
+            } else {
+                setSuccessFor(password);
+            }
+
+            if (confirm_passwordValue === '') {
+                setErrorFor(confirm_password, 'Password cannot be blank');
+            } else if (passwordValue !== confirm_passwordValue) {
+                setErrorFor(confirm_password, 'Passwords does not match');
+            } else {
+                setSuccessFor(confirm_password);
+            }
+        }
+
+        function setErrorFor(input, message) {
+            const cont = input.parentNode;
+            const small = cont.querySelector('small');
+            cont.className = 'cont error'
+            small.innerText = message;
+        }
+
+        function setSuccessFor(input) {
+            const cont = input.parentNode;
+            cont.className = 'cont success'
+
+        }
+    </script>
+    <!--validation end-->

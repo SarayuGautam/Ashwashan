@@ -7,11 +7,3 @@ exports.getArticles = async (req, res) => {
     articles: shuffle(articles),
   });
 };
-
-// exports.getAArticle = async (req, res) => {
-//   const articleId = req.params.id;
-//   const article = await Article.findOne({
-//     _id: articleId,
-//   });
-//   return res.json(article);
-// };

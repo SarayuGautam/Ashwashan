@@ -73,3 +73,12 @@
 	background: #41cba9;
 	outline: none;
 }
+
+.cont small{
+	visibility: hidden;
+}
+
+.cont.error small{
+	visibility: visible;
+}
+

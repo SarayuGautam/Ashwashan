@@ -1,25 +1,31 @@
 <%- include('partials/upperHeader') %>
+<link rel="stylesheet" href="/stylesheets/collective_articles.css">
 <%- include('partials/lowerHeader') %>
 
 <!--Article cards begin-->
 <div class="container py-4">
-
-    <% articles.forEach((article,i)=>{%>
-     <div class="card p-2">
+  <div class="card-deck-wrapper">
+        <div class="card-deck">
+ <% articles.forEach((article,i)=>{%>
+            <div class="col-sm-6 col-md-4">
+                <div class="card mb-8">
                     <a class="card-block stretched-link text-decoration-none" href="<%= article.url%>">
-                        <div style="height: 15rem;">
-                            <img src="<%= article.imageUrl%>" class="card-img-top" alt="article image">
+                        <div style="height: 16rem;">
+                            <img src="<%= article.imageUrl%>" class="card-img-top" alt="artical Image"
+                                style="height: 16rem;">
                         </div>
                         <hr>
-                        <p class="card-text" style="text-align: center;"><%= article.title%></p>
-                        <p style="text-align: center;"><%= article.summary%></p>
-
+                       <p class="card-text" style="text-align:center; color:blue"><%= article.title%></p>
+                      <p style="text-align: center; color:black"><%= article.summary%></p>
                     </a>
                 </div>
-    <% }) %>
-    <!-- /.card -->
-</div>
-<!--Article cards end-->
+             </div>
+             <% }) %>
+             </div>
+        </div>
+    </div>
+
+
 
 
 <%- include('partials/footer') %>

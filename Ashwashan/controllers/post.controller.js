@@ -4,6 +4,7 @@ const User = require("../models/User");
 const Comment = require("../models/Comment");
 
 exports.savePost = async (req, res) => {
+  console.log(req.body);
   const { postTitle, postBody } = req.body;
   const userId = req.user._id;
   const category = req.params.category;
@@ -15,8 +16,11 @@ exports.savePost = async (req, res) => {
     category,
   });
   await post.save();
-  return res.json({
-    post,
+  const posts = await Post.where({
+    category,
+  });
+  return res.render("collective_exp", {
+    posts,
   });
 };
 
@@ -38,6 +42,7 @@ exports.getPost = async (req, res) => {
   post.username = username;
   return res.render("particular_exp", {
     post,
+    postId,
     comments: shuffle(comments),
   });
 };

@@ -13,7 +13,6 @@ const { addComment } = require("../controllers/comment.controller");
 const { catchErrors } = require("../handlers/error_handler");
 
 const auth = require("../middleware/auth");
-const { request } = require("../app");
 
 router.get("/", auth, function (req, res, next) {
   res.render("category_support");

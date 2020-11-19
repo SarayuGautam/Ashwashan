@@ -13,20 +13,23 @@ const { addComment } = require("../controllers/comment.controller");
 const { catchErrors } = require("../handlers/error_handler");
 
 const auth = require("../middleware/auth");
+const { request } = require("../app");
 
-router.get("/", function (req, res, next) {
+router.get("/", auth, function (req, res, next) {
   res.render("category_support");
 });
 
-router.get("/:category/add", function (req, res, next) {
-  res.render("share_exp");
+router.get("/:category/add", auth, function (req, res, next) {
+  res.render("share_exp", {
+    category: req.params.category,
+  });
 });
 
 router.post("/:category/save", auth, catchErrors(savePost));
 
-router.get("/:category/all", catchErrors(getallPosts));
+router.get("/:category/all", auth, catchErrors(getallPosts));
 
-router.get("/:id", catchErrors(getPost));
+router.get("/:id", auth, catchErrors(getPost));
 
 router.post("/:id/add", auth, catchErrors(addComment));
 

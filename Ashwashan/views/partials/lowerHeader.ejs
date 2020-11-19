@@ -42,9 +42,18 @@
 
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
+                   <% if(!locals.user){ console.log(locals.user); %>
+
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         Login/Signup
-                    </button>
+                        </button>
+                        <% }else{ console.log(locals.user); %>
+                    <a type="button" class="btn btn-primary" href="/logout">
+
+                        LogOut
+                    </a>
+
+                        <% } %>
                 </form>
             </div>
         </nav>

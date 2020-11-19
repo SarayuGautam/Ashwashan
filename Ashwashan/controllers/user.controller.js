@@ -26,9 +26,8 @@ exports.signup = async (req, res) => {
       phone,
     });
     await user.save();
-    return res.render("index", {
-      user,
-    });
+    req.session.userId = user._id.toString();
+    return res.redirect("back");
   } catch (error) {
     console.log(error);
     res.status(500).send("Internal Server error Occured");
@@ -41,15 +40,9 @@ exports.login = async (req, res) => {
   validatePassword(password);
   const user = await User.findByCredentials(phone, password);
   const response = {};
-
-  const token = await user.generateAuthToken();
-  response.user = user;
-  response.token = token;
+  req.session.userId = user._id.toString();
   response.message = "Login successful!";
-
-  return res.render("index", {
-    response,
-  });
+  return res.redirect("back");
 };
 
 exports.getMyProfile = async (req, res) => {

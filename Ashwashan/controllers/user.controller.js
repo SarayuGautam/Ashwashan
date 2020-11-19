@@ -45,6 +45,10 @@ exports.login = async (req, res) => {
   return res.redirect("back");
 };
 
+exports.logOut = async (req, res) => {
+  req.session.userId = null;
+  return res.redirect("back");
+};
 exports.getMyProfile = async (req, res) => {
   return res.json(req.user);
 };

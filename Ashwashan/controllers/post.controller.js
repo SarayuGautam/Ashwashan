@@ -19,9 +19,7 @@ exports.savePost = async (req, res) => {
   const posts = await Post.where({
     category,
   });
-  return res.render("collective_exp", {
-    posts,
-  });
+  return res.redirect("/posts/" + category + "/all");
 };
 
 exports.getPost = async (req, res) => {

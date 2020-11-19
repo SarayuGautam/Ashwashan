@@ -4,20 +4,7 @@
 .card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 18rem;
-    width:18rem
-}
-/* not required
-.text-flow{
-    display: block;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
-    max-height: 3.6em;
-    line-height: 1.8em;
+    width:18rem;
+   margin-bottom: 20px;
 }
 
-
-.card-body{
-    overflow-y: auto;
-}
-*/

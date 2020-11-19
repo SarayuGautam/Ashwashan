@@ -3,7 +3,7 @@ const shuffle = require("../helpers/array.suffle");
 
 exports.getQuotes = async (req, res) => {
   const quotes = await Quote.find({});
-  return res.json({
+  return res.render("collective_quotes", {
     quotes: shuffle(quotes),
   });
 };

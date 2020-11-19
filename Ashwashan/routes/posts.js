@@ -18,9 +18,9 @@ router.get("/", function (req, res, next) {
   res.render("category_support");
 });
 
-// router.get("/:category/add", function (req, res, next) {
-//   res.render("share_exp");
-// });
+router.get("/:category/add", function (req, res, next) {
+  res.render("share_exp");
+});
 
 router.post("/:category/save", auth, catchErrors(savePost));
 

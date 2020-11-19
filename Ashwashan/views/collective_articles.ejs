@@ -1,0 +1,25 @@
+<%- include('partials/upperHeader') %>
+<%- include('partials/lowerHeader') %>
+
+<!--Article cards begin-->
+<div class="container py-4">
+
+    <% articles.forEach((article,i)=>{%>
+     <div class="card p-2">
+                    <a class="card-block stretched-link text-decoration-none" href="<%= article.url%>">
+                        <div style="height: 15rem;">
+                            <img src="<%= article.imageUrl%>" class="card-img-top" alt="article image">
+                        </div>
+                        <hr>
+                        <p class="card-text" style="text-align: center;"><%= article.title%></p>
+                        <p style="text-align: center;"><%= article.summary%></p>
+
+                    </a>
+                </div>
+    <% }) %>
+    <!-- /.card -->
+</div>
+<!--Article cards end-->
+
+
+<%- include('partials/footer') %>

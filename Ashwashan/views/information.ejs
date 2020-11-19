@@ -1,25 +1,44 @@
 <%- include('partials/upperHeader') %>
+<link rel="stylesheet" href="/stylesheets/category_support.css">
 <%- include('partials/lowerHeader') %>
 
+<!--Information cards begin-->
 <div class="container py-4">
-    <div class="row">
-        <% articles.forEach((article,i)=>{%>
+    <div class='row justify-content-center'>
+
         <div class="col-sm-6 col-md-4">
-            <div class="card  mb-3" style="height: 22rem">
-                <!-- image and link to article not added    -->
-                <img class="card-img-top img-fluid"
-                    src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-topfff&text=.card-img-top"
-                    alt="Card image cap" width="400">
-                <div class="card-body">
-                    <p class="card-text"><%= article.title %></p>
+            <div class="card" style="height: 20rem;">
+                <a class="card-block stretched-link text-decoration-none" href="quotes/all">
+                    <div class="card-body">
+                        <img src="images/motivation.png" class="card-img-top" alt="Anxiety support"
+                            style="height: 16rem;">
+                        <h5 class="card-title" style="text-align: center;">Motivational Quotes</h5>
+                    </div>
+                </a>
 
-                    <a href="#" class="btn btn-outline-primary" role="button">Read full article</a>
-
-                </div>
             </div>
         </div>
-        <% }) %>
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="height: 20rem;">
+                <a class="card-block stretched-link text-decoration-none" href="articles/all">
+                    <div class="card-body">
+                        <img src="images/articles.png" class="card-img-top" alt="Depression Support"
+                            style="height: 16rem;">
+                        <h5 class="card-title" style="text-align: center;">Informative articles</h5>
 
+                    </div>
+                </a>
+            </div>
+
+        </div>
     </div>
 </div>
+
+
+<!--Information cards end-->
+
 <%- include('partials/footer') %>
+
+</body>
+
+</html>

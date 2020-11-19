@@ -26,7 +26,7 @@ exports.signup = async (req, res) => {
       phone,
     });
     await user.save();
-    return res.render("/", {
+    return res.render("index", {
       user,
     });
   } catch (error) {
@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
   response.token = token;
   response.message = "Login successful!";
 
-  return res.render("/", {
+  return res.render("index", {
     response,
   });
 };

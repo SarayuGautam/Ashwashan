@@ -52,6 +52,7 @@ exports.getallPosts = async (req, res) => {
   });
 
   return res.render("collective_exp", {
+    category,
     posts: shuffle(posts),
   });
 };

@@ -3,6 +3,12 @@
 <%- include('partials/lowerHeader') %>
 
 <!--Information cards begin-->
+ <% if(message.length>0){ %>
+  <div class= "text-center alert alert-danger">
+      <%= message %>
+  </div>
+    <% } %>
+
 <div class="container py-4">
     <div class='row justify-content-center'>
 

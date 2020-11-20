@@ -9,7 +9,9 @@ const { catchErrors } = require("../handlers/error_handler");
 const { getArticles } = require("../controllers/articles.controller");
 
 router.get("/", auth, function (req, res, next) {
-  res.render("information");
+  res.render("information", {
+    message: req.flash("message"),
+  });
 });
 
 router.get("/articles", auth, catchErrors(getArticles));

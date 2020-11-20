@@ -10,7 +10,7 @@
 <div class="container py-4">
 
     <% posts.forEach((post,i)=>{%>
-    <div class="card">
+    <div class="card mb-4 " style="border-radius: 20px;">
         <div class="card-body">
             <h5 class="card-title"><%= post.postTitle %></h5>
             <p class="card-text"><%= post.postBody.substr(0, 400) %></p>

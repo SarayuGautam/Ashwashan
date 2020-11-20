@@ -14,8 +14,9 @@ footer{
 	width: 100%;
 	text-align: left;
     font: bold 16px sans-serif;
-    padding: 50px 50px 60px 50px;
+    padding: 10px 10px 10px 50px;
 	margin-top: 80px;
+	
 
 }
 
@@ -85,7 +86,7 @@ footer{
 	height: 38px;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 42px;
+	line-height: 38px;
 	margin: 10px 15px;
 	vertical-align: middle;
 }

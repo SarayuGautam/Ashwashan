@@ -1,24 +1,25 @@
 .navbar {
-	background-color: #EEC4AA;
-    padding-left: 16px;
-	padding-right: 16px;
-	
+  background-image: linear-gradient(to bottom, #c2c5e3, #cccfe7, #d6d9ea, #e0e2ee, #ebecf1);
+  padding-left: 36px;
+  padding-right: 16px;
+  height:80px;
+
 }
 
 .navbar .navbar-nav .option{
 	color: black;
-	font-size: 20px;
+	font-size: 23px;
 }
 
 .navbar .navbar-brand {
-    padding-left: 0;
-    font-size: 20px;
+    padding-left: 20;
+    font-size: 40px;
     padding-right: 50px;
 }
 
 .navbar .navbar-nav {
     position: relative;
-    
+
 }
 
 .navbar .action-buttons .dropdown-toggle::after {
@@ -26,7 +27,7 @@
 }
 
 /* login and singup modal*/
-.modal-login {		
+.modal-login {
 	color: #636363;
 	width: 350px;
 }
@@ -36,7 +37,7 @@
 	border: none;
 }
 .modal-login .modal-header {
-	border-bottom: none;   
+	border-bottom: none;
 	position: relative;
 	justify-content: center;
 }
@@ -53,14 +54,14 @@
 }
 .modal-login .form-control, .modal-login .btn {
 	min-height: 40px;
-	border-radius: 3px; 
+	border-radius: 3px;
 }
 .modal-login .close {
 	position: absolute;
 	top: -5px;
 	right: -5px;
-}	
-		
+}
+
 .modal-login.modal-dialog {
 	margin-top: 80px;
 }
@@ -72,7 +73,7 @@
 	transition: all 0.4s;
 	line-height: normal;
     border: none;
-    
+
 }
 .modal-login .btn:hover, .modal-login .btn:focus {
 	background: #41cba9;
@@ -86,4 +87,5 @@
 .cont.error small{
 	visibility: visible;
 }
+
 

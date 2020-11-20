@@ -8,3 +8,7 @@ body {
 .carousel-inner img {
     object-fit: contain;
   }
+
+  .ashwashan{
+    font-size: 35;
+  }

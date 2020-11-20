@@ -18,8 +18,8 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/"><span class="option" style="color:black;"> ASHWASHAN</span></a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/"><span class="option" style="color:#e96571;"> ASHWASHAN</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,11 +51,19 @@
                 <form class="form-inline my-2 my-lg-0">
                     <% if(!locals.user){ console.log(locals.user); %>
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn" style=" size:40px;
+  background-color: #e96571;
+  color:white;
+  font-size: 20px;
+  padding: 10px;" data-toggle="modal" data-target="#myModal">
                         Login/Signup
                     </button>
                     <% }else{ console.log(locals.user); %>
-                    <a type="button" class="btn btn-primary" href="/users/logout">
+                    <a type="button"style=" size:40px;
+  background-color: #e96571;
+  color:white;
+  font-size: 20px;
+  padding: 10px;" class="btn" href="/users/logout">
 
                         LogOut
                     </a>

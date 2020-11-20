@@ -1,20 +1,24 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
-
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+}
 footer{
-	background-color: #61878c;
-	position: relative;
-	bottom: 0;
+	background-image: linear-gradient(to top, #c2c5e3, #cccfe7, #d6d9ea, #e0e2ee, #ebecf1);
+  margin-top: auto;
 }
 /*@media (max-height:800px){
 	footer { position: static; }
 	header { padding-top:40px; }
 } */
 .footer-distributed{
-	height: 250px;
+  padding-left: 40px;
+	height: 350px;
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 18px Comfortaa;
+	font: bold 18px;
 
 
 }
@@ -32,7 +36,7 @@ footer{
 }
 .footer-distributed .footer.footer-left h3{
 	color: black;
-	font: bold 25px Comfortiaa;
+	font: bold 25px;
 	padding-left: 10px;
 }
 .footer-distributed .footer-left i{
@@ -74,7 +78,6 @@ footer{
 	.footer-distributed .footer-right{
 		display: block;
 		width: 100%;
-		margin-bottom: 40px;
 		text-align: center;
 	}
 

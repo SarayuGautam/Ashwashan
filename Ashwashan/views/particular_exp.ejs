@@ -17,13 +17,14 @@
 
   <div class="card" style="border: white;">
           <div class="card-body">
+            <% if(myPost=="not"){ %>
             <form action="/posts/<%= postId %>/add" method="POST">
                 <p class="card-text"><textarea id="experienceText" class="form-control" cols="10" rows="2"
                         name="commentBody" type="text" style="width: 100%; border-radius: 20px;"></textarea></p>
                 </p>
                 <button class="btn btn-outline-primary" type="submit">Comment</button>
             </form>
-
+            <% } %>
           </div>
 
         <hr>

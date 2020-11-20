@@ -19,22 +19,22 @@ router.get("/", auth, function (req, res, next) {
   res.render("category_support");
 });
 
-router.get("/:category/add", auth, function (req, res, next) {
+router.get("/add", auth, function (req, res, next) {
   if (!req.user) {
     req.flash("message", "Please Login");
     return res.redirect("back");
   } else {
     return res.render("share_exp", {
-      category: req.params.category,
+      category: req.query.category,
     });
   }
 });
 
-router.post("/:category/save", auth, catchErrors(savePost));
+router.post("/save", auth, catchErrors(savePost));
 
-router.get("/:category/all", auth, catchErrors(getallPosts));
+router.get("/all", auth, catchErrors(getallPosts));
 
-router.get("/:category/my", auth, catchErrors(getmyPosts));
+router.get("/my", auth, catchErrors(getmyPosts));
 
 router.get("/:id/:myPost", auth, catchErrors(getPost));
 

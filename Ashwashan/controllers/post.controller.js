@@ -7,7 +7,7 @@ exports.savePost = async (req, res) => {
   console.log(req.body);
   const { postTitle, postBody } = req.body;
   const userId = req.user._id;
-  const category = req.params.category;
+  const category = req.query.category;
 
   const post = new Post({
     postTitle,
@@ -51,7 +51,7 @@ exports.getPost = async (req, res) => {
 };
 
 exports.getallPosts = async (req, res) => {
-  const category = req.params.category;
+  const category = req.query.category;
 
   const posts = req.user
     ? await Post.where({
@@ -75,7 +75,7 @@ exports.getmyPosts = async (req, res) => {
     req.flash("message", "Please Login");
     return res.redirect("back");
   } else {
-    const category = req.params.category;
+    const category = req.query.category;
     const userId = req.user._id;
     const posts = await Post.where({
       category,

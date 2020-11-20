@@ -25,6 +25,7 @@ exports.getPost = async (req, res) => {
     return res.redirect("back");
   } else {
     const postId = req.params.id;
+    const myPost = req.params.myPost;
     console.log(postId);
     const post = await Post.findOne({
       _id: postId,
@@ -43,6 +44,7 @@ exports.getPost = async (req, res) => {
     return res.render("particular_exp", {
       post,
       postId,
+      myPost,
       comments: shuffle(comments),
     });
   }
@@ -58,17 +60,26 @@ exports.getallPosts = async (req, res) => {
     category,
     message: req.flash("message"),
     posts: shuffle(posts),
+    myPost: false,
   });
 };
 
 exports.getmyPosts = async (req, res) => {
-  const category = req.params.category;
-  const posts = await Post.where({
-    category,
-  });
+  if (!req.user) {
+    req.flash("message", "Please Login");
+    return res.redirect("back");
+  } else {
+    const category = req.params.category;
+    const userId = req.user._id;
+    const posts = await Post.where({
+      category,
+      userId,
+    });
 
-  return res.render("collective_exp", {
-    category,
-    posts: shuffle(posts),
-  });
+    return res.render("collective_exp", {
+      category,
+      posts: shuffle(posts),
+      myPost: true,
+    });
+  }
 };

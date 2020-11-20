@@ -2,16 +2,21 @@
 <link rel="stylesheets" href="stylesheets/collectiveExp_anxiety.css">
 <%- include('partials/lowerHeader') %>
 
-<div class="text-center" style="margin-top: 2%;">
-    Share with the community
-    <a class="btn btn-outline-primary" href="/posts/<%= category %>/add" role="button">Share Here</a></div>
-</div>
+<% if(!myPost){ %>
+
+  <div class="text-center" style="margin-top: 2%; margin-left: 6%;">
+  Share with the community
+    <a class="btn btn-outline-primary" href="/posts/<%= category %>/add" role="button">Share Here</a>
+    <a class="btn btn-outline-primary"style="margin-left: 10%;" href="/posts/<%= category %>/my" role="button">MyPosts</a></div>
+
 <hr>
 <br>
 <% if(message.length>0){ %>
  <div class= "text-center alert alert-danger">
     <%= message %>
  </div>
+  <% } %>
+
   <% } %>
 
 <!--Experience cards begin-->
@@ -22,7 +27,7 @@
         <div class="card-body">
             <h5 class="card-title"><%= post.postTitle %></h5>
             <p class="card-text"><%= post.postBody.substr(0, 400) %></p>
-            <a href="/posts/<%= post._id %>" class="btn btn-outline-primary" role="button">Read more</a>
+            <a href="/posts/<%= post._id %>/<%= myPost %>" class="btn btn-outline-primary" role="button">Read more</a>
         </div>
         <br>
     </div>

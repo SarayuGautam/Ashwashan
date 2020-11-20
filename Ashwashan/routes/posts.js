@@ -6,6 +6,7 @@ const {
   savePost,
   getPost,
   getallPosts,
+  getmyPosts,
 } = require("../controllers/post.controller");
 
 const { addComment } = require("../controllers/comment.controller");
@@ -33,7 +34,9 @@ router.post("/:category/save", auth, catchErrors(savePost));
 
 router.get("/:category/all", auth, catchErrors(getallPosts));
 
-router.get("/:id", auth, catchErrors(getPost));
+router.get("/:category/my", auth, catchErrors(getmyPosts));
+
+router.get("/:id/:myPost", auth, catchErrors(getPost));
 
 router.post("/:id/add", auth, catchErrors(addComment));
 

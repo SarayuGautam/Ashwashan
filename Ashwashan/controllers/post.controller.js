@@ -52,15 +52,21 @@ exports.getPost = async (req, res) => {
 
 exports.getallPosts = async (req, res) => {
   const category = req.params.category;
-  const posts = await Post.where({
-    category,
-  });
+
+  const posts = req.user
+    ? await Post.where({
+        category,
+        userId: { $nin: req.user._id },
+      })
+    : await Post.where({
+        category,
+      });
 
   return res.render("collective_exp", {
     category,
     message: req.flash("message"),
     posts: shuffle(posts),
-    myPost: false,
+    myPost: "not",
   });
 };
 
@@ -79,7 +85,7 @@ exports.getmyPosts = async (req, res) => {
     return res.render("collective_exp", {
       category,
       posts: shuffle(posts),
-      myPost: true,
+      myPost: "my",
     });
   }
 };

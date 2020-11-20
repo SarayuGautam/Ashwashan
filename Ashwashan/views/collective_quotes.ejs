@@ -1,25 +1,20 @@
 <%- include('partials/upperHeader') %>
-<link rel="stylesheet" href="/stylesheets/collective_articles.css">
+<link rel="stylesheet" href="/stylesheets/collective_exp.css">
 <%- include('partials/lowerHeader') %>
 
-<!--Quote cards begin-->
-<div class="container py-4">
-  <div class="card-deck-wrapper">
-        <div class="card-deck">
-    <% quotes.forEach((quote,i)=>{%>
-          <div class="col-sm-6 col-md-3">
-                <div class="card mb-8">
-                    <a class="card-block stretched-link text-decoration-none" href="#">
 
-                      <p class="card-text" style="text-align:center;"><%= quote.quote %></p>
-                      <p style="text-align: center; color:blue"><%= quote.author %></p>
-                    </a>
-                </div>
-             </div>
-       <% }) %>
-             </div>
+<div class="container py-4">
+
+    <% quotes.forEach((quote,i)=>{%>
+    <div class="card mb-4 " style="border-radius: 20px;">
+        <div class="card-body">
+            <h5 class="card-title"><%= quote.quote %></h5>
+            <p class="card-text"><%= quote.author %></p>
         </div>
+        <br>
     </div>
+    <% }) %>
+</div>
 
 
 

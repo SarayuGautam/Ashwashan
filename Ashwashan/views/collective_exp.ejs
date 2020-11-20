@@ -6,6 +6,14 @@
     Share with the community
     <a class="btn btn-outline-primary" href="/posts/<%= category %>/add" role="button">Share Here</a></div>
 </div>
+<hr>
+<br>
+<% if(message.length>0){ %>
+ <div class= "text-center alert alert-danger">
+    <%= message %>
+ </div>
+  <% } %>
+
 <!--Experience cards begin-->
 <div class="container py-4">
 

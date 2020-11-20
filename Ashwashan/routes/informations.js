@@ -1,9 +1,17 @@
 var express = require("express");
 var router = express.Router();
-const auth = require("../middleware/auth");
+const { getQuotes } = require("../controllers/quotes.controller");
 
-router.get("/", auth, function (req, res, next) {
+const { catchErrors } = require("../handlers/error_handler");
+
+const { getArticles } = require("../controllers/articles.controller");
+
+router.get("/", function (req, res, next) {
   res.render("information");
 });
+
+router.get("/articles", catchErrors(getArticles));
+
+router.get("/quotes", catchErrors(getQuotes));
 
 module.exports = router;

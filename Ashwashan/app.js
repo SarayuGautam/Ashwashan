@@ -1,4 +1,3 @@
-require("dotenv").config();
 require("./database");
 
 var createError = require("http-errors");
@@ -7,14 +6,12 @@ var session = require("express-session");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
-const auth = require("./middleware/auth");
 var logger = require("morgan");
+var flash = require("connect-flash");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postRouter = require("./routes/posts");
-var quotesRouter = require("./routes/quotes");
-var articlesRouter = require("./routes/articles");
 var organizationsRouter = require("./routes/organization");
 var informationRouter = require("./routes/informations");
 var app = express();
@@ -23,7 +20,7 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use(logger("dev"));
+app.use(logger("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -41,12 +38,11 @@ app.use(
     cookie: { maxAge: parseInt(process.env.SESS_LIFE), sameSite: true },
   })
 );
+app.use(flash());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/posts", postRouter);
-app.use("/quotes", quotesRouter);
-app.use("/articles", articlesRouter);
 app.use("/organizations", organizationsRouter);
 app.use("/informations", informationRouter);
 

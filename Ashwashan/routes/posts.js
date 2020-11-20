@@ -19,9 +19,14 @@ router.get("/", auth, function (req, res, next) {
 });
 
 router.get("/:category/add", auth, function (req, res, next) {
-  res.render("share_exp", {
-    category: req.params.category,
-  });
+  if (!req.user) {
+    req.flash("message", "Please Login");
+    return res.redirect("back");
+  } else {
+    return res.render("share_exp", {
+      category: req.params.category,
+    });
+  }
 });
 
 router.post("/:category/save", auth, catchErrors(savePost));

@@ -9,7 +9,7 @@ footer{
 	header { padding-top:40px; }
 } */
 .footer-distributed{
-	background-color: #3955f3;
+	background-image: linear-gradient(to right bottom, #413243, #47465b, #4c5c70, #537280, #61878c);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;

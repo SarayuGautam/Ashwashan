@@ -3,10 +3,11 @@ require("./database");
 
 var createError = require("http-errors");
 var express = require("express");
+var session = require("express-session");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
-
+const auth = require("./middleware/auth");
 var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
@@ -30,6 +31,16 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  session({
+    name: process.env.SESS_NAME,
+    secret: process.env.SESS_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: parseInt(process.env.SESS_LIFE), sameSite: true },
+  })
+);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);

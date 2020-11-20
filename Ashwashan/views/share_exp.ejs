@@ -5,19 +5,19 @@
 <h5 class="formHead">Share your experience</h5>
 <div class="card">
     <div class="card-body">
-        <form action="" method="POST" name="experienceForm" class="expForm">
+        <form action="/posts/<%= category %>/save" method="POST" name="experienceForm" class="expForm">
             <div class="col-md-9">
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+                    <input type="text" name="postTitle" class="form-control" id="inputTitle" placeholder="Title">
                 </div>
                 <div class="form-group">
                     <label>Your experience</label>
-                    <p>
-                        <textarea id="experienceText" class="form-control" cols="107" rows="15" name="experienceText"
-                            form="experienceForm"></textarea></p>
+
+                        <textarea id="experienceText" class="form-control" cols="107" rows="15" name="postBody"
+                           type="text"></textarea>
                 </div>
-                <a class="btn btn-outline-primary" href="#" role="button">Post</a>
+                <button class="btn btn-outline-primary" type="submit">Post</button>
             </div>
         </form>
     </div>

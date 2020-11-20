@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");
 const User = require("../models/User");
-const CustomError = require("../handlers/custom_error");
 const { catchErrors } = require("../handlers/error_handler");
+const { Types } = require("mongoose");
+const ObjectID = Types.ObjectId;
 
 const auth = catchErrors(
   /**
@@ -10,20 +10,15 @@ const auth = catchErrors(
    * @param {NextFunction} next
    */
   async (req, res, next) => {
-    if (
-      !req.headers.authorization ||
-      req.headers.authorization === "Bearer null"
-    ) {
-      throw new CustomError(401, "Please authenticate.");
+    if (!req.session.userId || !ObjectID.isValid(req.session.userId)) {
+      next();
     }
-    const token = req.headers.authorization.replace("Bearer ", "");
-    const { _id } = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findOne({
-      _id,
-    });
-    if (!user) throw new CustomError(401, "Please authenticate.");
-    req.token = token;
+    const user = await User.findById(req.session.userId);
+    if (!user) {
+      next();
+    }
     req.user = user;
+    res.locals.user = user;
     next();
   }
 );

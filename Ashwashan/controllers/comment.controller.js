@@ -12,7 +12,8 @@ exports.addComment = async (req, res) => {
     postId,
   });
   await comment.save();
-  return res.json({
-    comment,
-  });
+  // return res.render({
+  //   comment,
+  // });
+  return res.redirect("/posts/" + postId + "/");
 };

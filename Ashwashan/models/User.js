@@ -47,16 +47,6 @@ userSchema.methods.isPassword = async function (password) {
   return isPassword;
 };
 
-userSchema.methods.generateAuthToken = async function () {
-  const user = this;
-  const token = await jwt.sign(
-    {
-      _id: user._id.toString(),
-    },
-    process.env.JWT_SECRET
-  );
-  return token;
-};
 userSchema.methods.toJSON = function () {
   const user = this;
   const userObject = user.toObject();

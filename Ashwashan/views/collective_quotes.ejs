@@ -1,24 +1,26 @@
 <%- include('partials/upperHeader') %>
-<link rel="stylesheets" href="stylesheets/collectiveExp_anxiety.css">
+<link rel="stylesheet" href="/stylesheets/collective_articles.css">
 <%- include('partials/lowerHeader') %>
 
 <!--Quote cards begin-->
 <div class="container py-4">
- <div class="col-sm-6 col-md-4">
+  <div class="card-deck-wrapper">
+        <div class="card-deck">
     <% quotes.forEach((quote,i)=>{%>
+          <div class="col-sm-6 col-md-3">
+                <div class="card mb-8">
+                    <a class="card-block stretched-link text-decoration-none" href="#">
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"><%= quote.quote %></h5>
-            <p class="card-text"><%= quote.author %></p>
+                      <p class="card-text" style="text-align:center;"><%= quote.quote %></p>
+                      <p style="text-align: center; color:blue"><%= quote.author %></p>
+                    </a>
+                </div>
+             </div>
+       <% }) %>
+             </div>
         </div>
-        <br>
     </div>
-    <% }) %>
-     </div>
-    <!-- /.card -->
-</div>
-<!--Quote cards end-->
+
 
 
 <%- include('partials/footer') %>

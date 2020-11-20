@@ -1,9 +1,14 @@
 .navbar {
     background-image: linear-gradient(to right, #3f72c9, #4999d7, #79bcdd, #b5dce6, #f5f9f9);
     padding-left: 16px;
-    padding-right: 16px;
+	padding-right: 16px;
+	
 }
 
+.navbar .navbar-nav .option{
+	color: black;
+	font-size: 20px;
+}
 
 .navbar .navbar-brand {
     padding-left: 0;

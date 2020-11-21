@@ -4,7 +4,6 @@ const User = require("../models/User");
 const Comment = require("../models/Comment");
 
 exports.savePost = async (req, res) => {
-  console.log(req.body);
   const { postTitle, postBody } = req.body;
   const userId = req.user._id;
   const category = req.query.category;
@@ -16,7 +15,7 @@ exports.savePost = async (req, res) => {
     category,
   });
   await post.save();
-  return res.redirect("/posts/" + category + "/all");
+  return res.redirect("/posts/all?category=" + category);
 };
 
 exports.getPost = async (req, res) => {

@@ -17,3 +17,6 @@ mongoose.connection.once("open", () => {
 require("./models/User");
 require("./models/Post");
 require("./models/Comment");
+require("./models/Article");
+require("./models/Organization");
+require("./models/Quote");

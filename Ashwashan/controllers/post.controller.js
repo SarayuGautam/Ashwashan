@@ -51,23 +51,28 @@ exports.getPost = async (req, res) => {
 };
 
 exports.getallPosts = async (req, res) => {
-  const category = req.query.category;
+  if (!req.user) {
+    req.flash("message", "Please Login");
+    return res.redirect("back");
+  } else {
+    const category = req.query.category;
 
-  const posts = req.user
-    ? await Post.where({
-        category,
-        userId: { $nin: req.user._id },
-      })
-    : await Post.where({
-        category,
-      });
+    const posts = req.user
+      ? await Post.where({
+          category,
+          userId: { $nin: req.user._id },
+        })
+      : await Post.where({
+          category,
+        });
 
-  return res.render("collective_exp", {
-    category,
-    message: req.flash("message"),
-    posts: shuffle(posts),
-    myPost: "not",
-  });
+    return res.render("collective_exp", {
+      category,
+      message: req.flash("message"),
+      posts: shuffle(posts),
+      myPost: "not",
+    });
+  }
 };
 
 exports.getmyPosts = async (req, res) => {

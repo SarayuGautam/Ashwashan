@@ -16,7 +16,9 @@ const { catchErrors } = require("../handlers/error_handler");
 const auth = require("../middleware/auth");
 
 router.get("/", auth, function (req, res, next) {
-  res.render("category_support");
+  res.render("category_support", {
+    message: req.flash("message"),
+  });
 });
 
 router.get("/add", auth, function (req, res, next) {

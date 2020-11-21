@@ -4,7 +4,6 @@ const User = require("../models/User");
 const Comment = require("../models/Comment");
 
 exports.savePost = async (req, res) => {
-  console.log(req.body);
   const { postTitle, postBody } = req.body;
   const userId = req.user._id;
   const category = req.query.category;
@@ -16,7 +15,7 @@ exports.savePost = async (req, res) => {
     category,
   });
   await post.save();
-  return res.redirect("/posts/" + category + "/all");
+  return res.redirect("/posts/all?category=" + category);
 };
 
 exports.getPost = async (req, res) => {
@@ -51,23 +50,28 @@ exports.getPost = async (req, res) => {
 };
 
 exports.getallPosts = async (req, res) => {
-  const category = req.query.category;
+  if (!req.user) {
+    req.flash("message", "Please Login");
+    return res.redirect("back");
+  } else {
+    const category = req.query.category;
 
-  const posts = req.user
-    ? await Post.where({
-        category,
-        userId: { $nin: req.user._id },
-      })
-    : await Post.where({
-        category,
-      });
+    const posts = req.user
+      ? await Post.where({
+          category,
+          userId: { $nin: req.user._id },
+        })
+      : await Post.where({
+          category,
+        });
 
-  return res.render("collective_exp", {
-    category,
-    message: req.flash("message"),
-    posts: shuffle(posts),
-    myPost: "not",
-  });
+    return res.render("collective_exp", {
+      category,
+      message: req.flash("message"),
+      posts: shuffle(posts),
+      myPost: "not",
+    });
+  }
 };
 
 exports.getmyPosts = async (req, res) => {

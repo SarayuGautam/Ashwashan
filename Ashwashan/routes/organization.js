@@ -7,7 +7,9 @@ const { getOrganizations } = require("../controllers/organization.controller");
 const { catchErrors } = require("../handlers/error_handler");
 
 router.get("/", auth, function (req, res, next) {
-  res.render("collective_org");
+  res.render("collective_org", {
+    message: req.flash("message"),
+  });
 });
 
 router.get("/:category", auth, catchErrors(getOrganizations));

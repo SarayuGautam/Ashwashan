@@ -19,28 +19,28 @@
 <body>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/"><span class="option" style="color:#e96571;"> ASHWASHAN</span></a>
+            <a class="navbar-brand" href="/" style="margin-left: 80px;"><img src="/images/Ashwashan.png" alt="ashwashan-logo" width="25%"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                <ul class="navbar-nav mr-auto" style="margin-left: -260px;">
+                    <li class="nav-item mx-3">
                         <a class="nav-link" href="/"><span class="option"> Home</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a class="nav-link" href="/informations">
                             <span class="option">Information</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a class="nav-link" href="/posts">
                             <span class="option">Peer Support</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a class="nav-link" href="/organizations">
                             <span class="option">Organization</span>
                         </a>
@@ -48,22 +48,22 @@
 
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0 float-right mr-5">
                     <% if(!locals.user){ console.log(locals.user); %>
 
-                    <button type="button" class="btn" style=" size:40px;
+                    <button type="button" class="btn" style=" size:30px;
   background-color: #e96571;
   color:white;
-  font-size: 20px;
-  padding: 10px;" data-toggle="modal" data-target="#myModal">
+  font-size: 15px;
+  padding: 5px;" data-toggle="modal" data-target="#myModal">
                         Login/Signup
                     </button>
                     <% }else{ console.log(locals.user); %>
-                    <a type="button"style=" size:40px;
+                    <a type="button"style=" size:30px;
   background-color: #e96571;
   color:white;
-  font-size: 20px;
-  padding: 10px;" class="btn" href="/users/logout">
+  font-size: 15px;
+  padding: 5px;" class="btn" href="/users/logout">
 
                         LogOut
                     </a>

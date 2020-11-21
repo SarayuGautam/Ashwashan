@@ -1,20 +1,21 @@
 .navbar {
   background-image: linear-gradient(to bottom, #c2c5e3, #cccfe7, #d6d9ea, #e0e2ee, #ebecf1);
-  padding-left: 36px;
-  padding-right: 16px;
+  padding-left: 0px;
+  padding-right: 0px;
   height:80px;
 
 }
 
 .navbar .navbar-nav .option{
 	color: black;
-	font-size: 23px;
+	font-size: 18px;
+	padding-left: 0px;
 }
 
 .navbar .navbar-brand {
-    padding-left: 20;
+    padding-left: 0px;
     font-size: 40px;
-    padding-right: 50px;
+    padding-right: 0px;
 }
 
 .navbar .navbar-nav {
